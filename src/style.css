@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #020617;
+  --surface-color: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-primary: #38bdf8;
+  --accent-secondary: #818cf8;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@theme {
+  --color-brand-primary: var(--accent-primary);
+  --color-brand-secondary: var(--accent-secondary);
+  --font-outfit: 'Outfit', sans-serif;
+  --background-color-base: var(--bg-color);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Base Utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
