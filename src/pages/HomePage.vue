@@ -182,8 +182,6 @@ import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger)
-
 // --- Navigation ---
 const navLinks = [
   { name: 'Layanan', href: '#services' },
