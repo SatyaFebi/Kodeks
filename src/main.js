@@ -7,7 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // FontAwesome imports
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faDesktop, faBrain, faGears, faLock, faBolt, faArrowTrendUp, faEnvelope, faCircleCheck, faFileLines } from '@fortawesome/free-solid-svg-icons'
+import { 
+  faDesktop, faBrain, faGears, faLock, faBolt, faArrowTrendUp, 
+  faEnvelope, faCircleCheck, faFileLines, faBars, faXmark 
+} from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faShopify, faSlack } from '@fortawesome/free-brands-svg-icons'
 
 // GSAP Plugins registration
@@ -46,7 +49,8 @@ document.addEventListener('click', (e) => {
 // Add icons to library
 library.add(
   faDesktop, faBrain, faGears, faLock, faBolt, faArrowTrendUp, 
-  faEnvelope, faCircleCheck, faWhatsapp, faShopify, faSlack, faFileLines
+  faEnvelope, faCircleCheck, faWhatsapp, faShopify, faSlack, faFileLines,
+  faBars, faXmark
 )
 
 import App from './App.vue'

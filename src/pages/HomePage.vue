@@ -1,20 +1,7 @@
 <template>
   <div class="homepage pt-20 overflow-x-hidden bg-slate-950 text-slate-200">
     <!-- Navbar -->
-    <nav class="navbar fixed top-0 left-0 right-0 h-20 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10 z-[1000] flex items-center">
-      <div class="container mx-auto px-6 flex justify-between items-center w-full">
-        <div class="logo text-2xl font-bold tracking-wider text-white">KODEKS<span class="text-sky-400">.</span></div>
-        <div class="nav-links flex gap-8 items-center">
-          <a v-for="link in navLinks" :key="link.name" :href="link.href" 
-             class="text-slate-400 text-sm font-medium hover:text-white transition-colors">
-            {{ link.name }}
-          </a>
-          <a href="#" class="bg-linear-to-br from-sky-400 to-indigo-400 text-white text-[0.85rem] font-semibold py-2.5 px-6 rounded-full shadow-lg shadow-sky-500/20 hover:scale-105 transition-transform">
-            Kontak
-          </a>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
 
     <!-- Hero Section -->
     <header class="hero py-32 relative">
@@ -24,17 +11,17 @@
             Web Apps · AI · Workflow Automation
           </div>
           <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] mb-8 text-white tracking-tight">
-            Bangun <span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">Sistem Internal</span> & Otomasi AI yang Berfokus pada Hasil
+            Build <span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">Internal Systems</span> & AI Automation for Results
           </h1>
           <p class="text-xl text-slate-400 mb-12 max-w-[540px] leading-relaxed">
-            Kodeks membangun aplikasi web kustom untuk sistem internal Anda, lengkap dengan kecerdasan buatan dan otomasi workflow untuk efisiensi bisnis tanpa batas.
+            Kodeks builds custom web applications for your internal systems, complete with artificial intelligence and workflow automation for seamless business efficiency.
           </p>
           <div class="hero-btns flex flex-wrap gap-6">
             <a href="#" class="bg-linear-to-br from-sky-400 to-indigo-400 text-white font-bold py-4 px-10 rounded-full shadow-xl shadow-sky-500/30 hover:scale-105 transition-transform">
-              Konsultasi Gratis
+              Free Consultation
             </a>
             <a href="#process" class="bg-white/5 border border-white/10 text-white font-bold py-4 px-10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-sky-400/50 transition-all border-solid">
-              Lihat Portfolio Sistem
+              View System Portfolio
             </a>
           </div>
         </div>
@@ -72,8 +59,8 @@
     <!-- Problem-Solution Section -->
     <section id="process" class="py-32 bg-slate-950/50">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white tracking-tight">Sistem yang <span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">Terfragmentasi</span> Adalah Kerugian</h2>
-        <p class="text-slate-400 mb-20 max-w-2xl mx-auto text-lg leading-relaxed">Kodeks menyatukan data, proses, dan teknologi ke dalam satu platform yang cerdas and otomatis.</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white tracking-tight"><span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">Fragmented Systems</span> are a Liability</h2>
+        <p class="text-slate-400 mb-20 max-w-2xl mx-auto text-lg leading-relaxed">Kodeks unifies data, processes, and technology into a single intelligent and automated platform.</p>
         
         <div class="problem-grid grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
           <div v-for="prob in problems" :key="prob.title" class="problem-card bg-slate-900/60 backdrop-blur-2xl border border-white/5 rounded-4xl p-12 text-left hover:border-sky-500/30 transition-all group opacity-100">
@@ -103,14 +90,14 @@
     <!-- Services Section -->
     <section id="services" class="py-32 bg-slate-950">
       <div class="container mx-auto px-6">
-        <h2 class="text-center text-4xl lg:text-5xl font-bold mb-20 text-white tracking-tight">Solusi <span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">End-to-End</span> Kami</h2>
+        <h2 class="text-center text-4xl lg:text-5xl font-bold mb-20 text-white tracking-tight">Our <span class="gradient-text text-transparent bg-clip-text bg-linear-to-br from-sky-400 to-indigo-400">End-to-End</span> Solutions</h2>
         
         <div class="service-grid grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div v-for="service in services" :key="service.title" 
                class="service-item p-12 flex flex-col relative overflow-hidden group transition-all opacity-100"
                :class="service.featured ? 'bg-slate-950 border-2 border-sky-500/50 shadow-[0_0_50px_-12px_rgba(56,189,248,0.3)] rounded-[2.5rem] transform hover:scale-[1.02]' : 'bg-slate-900/60 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] hover:border-sky-500/30'">
             
-            <div v-if="service.featured" class="absolute top-0 right-0 bg-sky-500/20 text-sky-400 text-[0.65rem] font-black px-6 py-2 rounded-bl-3xl tracking-widest uppercase">Paling Dicari</div>
+            <div v-if="service.featured" class="absolute top-0 right-0 bg-sky-500/20 text-sky-400 text-[0.65rem] font-black px-6 py-2 rounded-bl-3xl tracking-widest uppercase">Most Popular</div>
             
             <div class="text-4xl mb-8" :class="service.iconColor">
               <font-awesome-icon :icon="['fas', service.icon]" />
@@ -131,7 +118,7 @@
     <section id="portfolio" class="py-32 bg-slate-950">
       <div class="container mx-auto px-6">
         <div class="integration-logos text-center mb-32">
-          <p class="text-[0.7rem] uppercase tracking-[4px] font-bold text-slate-500 mb-16">KODEKS TERINTEGRASI DENGAN EKOSISTEM FAVORIT ANDA</p>
+          <p class="text-[0.7rem] uppercase tracking-[4px] font-bold text-slate-500 mb-16">KODEKS INTEGRATES WITH YOUR FAVORITE ECOSYSTEMS</p>
           <div class="logo-grid flex flex-wrap justify-center gap-16 md:gap-24 opacity-100">
             <div v-for="integ in integrations" :key="integ.title" 
                  class="integ-icon text-5xl text-slate-500 hover:text-sky-400 transition-all transform hover:-translate-y-2 cursor-pointer" 
@@ -145,15 +132,15 @@
           <div class="absolute -top-24 -right-24 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl group-hover:bg-sky-500/20 transition-all"></div>
           <div class="case-content relative z-10">
             <div class="badge inline-block px-4 py-1.5 bg-sky-500/10 text-sky-400 text-[0.65rem] font-bold tracking-widest uppercase rounded-full border border-sky-500/20 mb-10">Case Study</div>
-            <h3 class="text-4xl lg:text-5xl font-bold mb-10 text-white tracking-tight leading-tight">Otomasi Support 24/7 untuk E-commerce Fashion</h3>
+            <h3 class="text-4xl lg:text-5xl font-bold mb-10 text-white tracking-tight leading-tight">24/7 Support Automation for Fashion E-commerce</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
               <div class="space-y-4">
                 <span class="text-sky-400 font-bold uppercase tracking-widest text-xs">Problem</span>
-                <p class="text-slate-300 text-xl leading-relaxed">Tim support kewalahan dengan 500+ chat/hari. Response time rata-rata mencapai 4 jam, menyebabkan drop-off customer yang tinggi.</p>
+                <p class="text-slate-300 text-xl leading-relaxed">Support team overwhelmed with 500+ chats/day. Average response time reached 4 hours, causing high customer drop-off.</p>
               </div>
               <div class="space-y-4">
                 <span class="text-sky-400 font-bold uppercase tracking-widest text-xs">Solution</span>
-                <p class="text-slate-300 text-xl leading-relaxed">Implementasi Custom AI Chatbot yang terintegrasi penuh dengan database stok & Shopify API untuk otomasi jawaban secara real-time.</p>
+                <p class="text-slate-300 text-xl leading-relaxed">Implementation of a Custom AI Chatbot fully integrated with inventory database & Shopify API for real-time automated responses.</p>
               </div>
             </div>
             <div class="flex flex-col md:flex-row gap-20 p-12 bg-white/5 rounded-3xl border border-white/10">
@@ -181,46 +168,41 @@
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Navbar from '../components/Navbar.vue'
 
-// --- Navigation ---
-const navLinks = [
-  { name: 'Layanan', href: '#services' },
-  { name: 'Proses', href: '#process' },
-  { name: 'Kasus', href: '#portfolio' }
-]
 
 // --- Problems ---
 const problems = [
-  { icon: 'lock', title: 'Sistem Terisolasi', desc: 'Data tersebar di berbagai spreadsheet dan tool yang tidak saling bicara (Siloed Data).' },
-  { icon: 'bolt', title: 'Inefisiensi Alur Kerja', desc: 'Banyak proses manual yang rawan kesalahan (human-error) dan memakan biaya operasional tinggi.' },
-  { icon: 'arrow-trend-up', title: 'Sulitnya Skalabilitas', desc: 'Kesulitan mengelola ribuan transaksi atau permintaan karena platform lama tidak memadai.' }
+  { icon: 'lock', title: 'Isolated Systems', desc: 'Data scattered across various spreadsheets and tools that don\'t talk to each other (Siloed Data).' },
+  { icon: 'bolt', title: 'Workflow Inefficiency', desc: 'Numerous manual processes prone to human error and high operational costs.' },
+  { icon: 'arrow-trend-up', title: 'Scalability Challenges', desc: 'Difficulty managing thousands of transactions or requests due to inadequate legacy platforms.' }
 ]
 
 // --- Flow Steps ---
 const flowSteps = [
-  { number: 1, title: 'Bangun Sistem', highlight: false },
-  { number: 2, title: 'Integrasi AI', highlight: true },
-  { number: 3, title: 'Otomasi Penuh', highlight: false }
+  { number: 1, title: 'Build System', highlight: false },
+  { number: 2, title: 'AI Integration', highlight: true },
+  { number: 3, title: 'Full Automation', highlight: false }
 ]
 
 // --- Services ---
 const services = [
   { 
     icon: 'desktop', iconColor: 'text-sky-400', title: 'Custom Internal Systems', 
-    desc: 'Aplikasi web modern yang dirancang khusus untuk operasional Anda—mulai dari Portal, CRM, hingga Dashbord Admin kustom.',
-    features: ['Enterprise Web Apps', 'Sistem Inventaris/Monitoring', 'Portal Klien & Dashboard'],
+    desc: 'Modern web applications tailored for your operations—from Portals and CRMs to custom Admin Dashboards.',
+    features: ['Enterprise Web Apps', 'Inventory/Monitoring Systems', 'Client Portals & Dashboards'],
     featured: false 
   },
   { 
     icon: 'brain', iconColor: 'text-indigo-400', title: 'Intelligent AI Solutions', 
-    desc: 'Memberikan otak pada sistem Anda. Integrasi model AI canggih untuk analisis data yang lebih akurat dan responsif.',
-    features: ['Custom LLM & Chatbot', 'Forecasting & Prediksi', 'Analisis Sentimen & Data'],
+    desc: 'Providing a brain for your system. Integration of advanced AI models for more accurate and responsive data analysis.',
+    features: ['Custom LLM & Chatbots', 'Forecasting & Prediction', 'Sentiment & Data Analysis'],
     featured: true 
   },
   { 
     icon: 'gears', iconColor: 'text-emerald-400', title: 'Workflow Automation', 
-    desc: 'Menghapus pekerjaan repetitif dengan menghubungkan setiap sistem melalui otomasi tanpa hambatan.',
-    features: ['Integrasi API & Platform', 'Automated Reporting', 'Otomasi Database Sync'],
+    desc: 'Eliminating repetitive tasks by connecting every system through seamless automation.',
+    features: ['API & Platform Integration', 'Automated Reporting', 'Database Sync Automation'],
     featured: false 
   }
 ]
@@ -236,8 +218,8 @@ const integrations = [
 
 // --- Case Study ---
 const caseStudyResults = [
-  { value: '92%', label: 'Otomasi Chat Berhasil', highlight: true },
-  { value: '<30s', label: 'Kecepatan Respon AI', highlight: false }
+  { value: '92%', label: 'Successful Chat Automation', highlight: true },
+  { value: '<30s', label: 'AI Response Speed', highlight: false }
 ]
 
 onMounted(() => {
